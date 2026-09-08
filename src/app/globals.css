@@ -278,10 +278,11 @@ img {
 .hero-title-band {
   display: inline-flex;
   justify-content: center;
+  gap: clamp(0.02em, 0.22vw, 0.055em);
   color: #ffffff;
-  font-size: clamp(3.5rem, 12.2vw, 9.6rem);
+  font-size: clamp(3.2rem, 10vw, 8.2rem);
   font-weight: 900;
-  letter-spacing: -0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
   text-shadow: 0 0.18rem 1.6rem rgba(0, 0, 0, 0.32);
 }
@@ -1158,8 +1159,16 @@ details p {
   }
 
   .hero h1 {
-    font-size: clamp(2.65rem, 13vw, 3.5rem);
-    letter-spacing: -0.055em;
+    max-width: min(100%, 18rem);
+  }
+
+  .hero-title-host {
+    font-size: clamp(1.65rem, 8vw, 2.6rem);
+  }
+
+  .hero-title-band {
+    gap: 0.035em;
+    font-size: clamp(2.55rem, 11.5vw, 3.25rem);
   }
 
   .button {

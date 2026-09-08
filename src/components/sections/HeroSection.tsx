@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="hero-copy">
         <p className="section-kicker" data-animate-hero="kicker">Альметьевск · Татарстан</p>
         <h1 id="hero-title" className="hero-title" data-animate-hero="title" aria-label={hero.title}>
-          <span className="hero-title-host" data-animate-hero="host" aria-hidden="true">Алексей Иванов</span>
+          <span className="hero-title-host" data-animate-hero="host" aria-hidden="true">Алексей Иванов и</span>
           <span className="hero-title-band" aria-label={bandTitle}>
             {bandTitleCharacters.map((character, index) => (
               <span key={`${character}-${index}`} className="hero-title-character" data-animate-hero="band-character" aria-hidden="true">
