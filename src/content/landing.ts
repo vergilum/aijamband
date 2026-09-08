@@ -1,4 +1,5 @@
 import type { LandingContent } from "@/types/content";
+import { withBasePath } from "@/lib/paths";
 
 export const landingContent: LandingContent = {
   hero: {
@@ -77,7 +78,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-hero-fon",
       type: "image",
-      src: "/images/band/hero-fon.png",
+      src: withBasePath("/images/band/hero-fon.png"),
       poster: null,
       alt: "Джем-Бэнд на сцене с ведущим, вокалисткой и барабанщиком",
       title: "Джем-Бэнд на сцене",
@@ -90,7 +91,7 @@ export const landingContent: LandingContent = {
     {
       id: "alexey-hero-stage-wide",
       type: "image",
-      src: "/images/host/alexey-hero-stage-wide.jpg",
+      src: withBasePath("/images/host/alexey-hero-stage-wide.jpg"),
       poster: null,
       alt: "Алексей Иванов с гитарой и микрофоном на сцене",
       title: "Алексей Иванов на сцене",
@@ -103,7 +104,7 @@ export const landingContent: LandingContent = {
     {
       id: "alexey-stage-guitar",
       type: "image",
-      src: "/images/host/alexey-stage-guitar.jpg",
+      src: withBasePath("/images/host/alexey-stage-guitar.jpg"),
       poster: null,
       alt: "Алексей Иванов с гитарой и микрофоном на сцене",
       title: "Алексей Иванов на сцене",
@@ -116,7 +117,7 @@ export const landingContent: LandingContent = {
     {
       id: "alexey-portrait-guitar",
       type: "image",
-      src: "/images/host/alexey-portrait-guitar.jpg",
+      src: withBasePath("/images/host/alexey-portrait-guitar.jpg"),
       poster: null,
       alt: "Портрет Алексея Иванова с гитарой",
       title: "Портрет Алексея",
@@ -129,7 +130,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-live-wide",
       type: "image",
-      src: "/images/band/jam-band-live-wide.jpg",
+      src: withBasePath("/images/band/jam-band-live-wide.jpg"),
       poster: null,
       alt: "Джем-Бэнд выступает на мероприятии",
       title: "Джем-Бэнд live",
@@ -142,7 +143,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-live-section",
       type: "image",
-      src: "/images/band/jam-band-live-section.jpg",
+      src: withBasePath("/images/band/jam-band-live-section.jpg"),
       poster: null,
       alt: "Джем-Бэнд во время живого выступления на мероприятии",
       title: "Джем-Бэнд live",
@@ -155,7 +156,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-vocal-live",
       type: "image",
-      src: "/images/band/jam-band-vocal-live.jpg",
+      src: withBasePath("/images/band/jam-band-vocal-live.jpg"),
       poster: null,
       alt: "Вокалистка Джем-Бэнд во время живого выступления",
       title: "Вокал и гости",
@@ -168,7 +169,7 @@ export const landingContent: LandingContent = {
     {
       id: "band-acoustic-city",
       type: "image",
-      src: "/images/band/jam-band-acoustic-city.jpg",
+      src: withBasePath("/images/band/jam-band-acoustic-city.jpg"),
       poster: null,
       alt: "Акустическое выступление группы на открытой площадке",
       title: "Акустическое выступление",
@@ -181,7 +182,7 @@ export const landingContent: LandingContent = {
     {
       id: "host-acoustic",
       type: "image",
-      src: "/images/host/alexey-acoustic-performance.jpg",
+      src: withBasePath("/images/host/alexey-acoustic-performance.jpg"),
       poster: null,
       alt: "Алексей Иванов с гитарой у микрофона",
       title: "Ведущий и музыка",
@@ -194,7 +195,7 @@ export const landingContent: LandingContent = {
     {
       id: "alexey-stage-mic",
       type: "image",
-      src: "/images/host/alexey-stage-mic.jpg",
+      src: withBasePath("/images/host/alexey-stage-mic.jpg"),
       poster: null,
       alt: "Алексей Иванов у микрофона с гитарой на сцене",
       title: "Ведущий у микрофона",
@@ -207,7 +208,7 @@ export const landingContent: LandingContent = {
     {
       id: "alexey-motion-white",
       type: "image",
-      src: "/images/host/alexey-live-hosting.jpg",
+      src: withBasePath("/images/host/alexey-live-hosting.jpg"),
       poster: null,
       alt: "Алексей Иванов ведет мероприятие с микрофоном",
       title: "Живое ведение",
@@ -220,7 +221,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-banquet-live",
       type: "image",
-      src: "/images/band/jam-band-banquet-live.jpg",
+      src: withBasePath("/images/band/jam-band-banquet-live.jpg"),
       poster: null,
       alt: "Джем-Бэнд выступает перед гостями на мероприятии",
       title: "Музыка в зале",
@@ -233,7 +234,7 @@ export const landingContent: LandingContent = {
     {
       id: "jam-band-acoustic-stage",
       type: "image",
-      src: "/images/band/jam-band-acoustic-stage.jpg",
+      src: withBasePath("/images/band/jam-band-acoustic-stage.jpg"),
       poster: null,
       alt: "Акустическое выступление с вокалом и гитарой на сцене",
       title: "Акустический формат",
@@ -247,7 +248,7 @@ export const landingContent: LandingContent = {
       id: "showreel-todo",
       type: "video",
       src: null,
-      poster: "/images/band/jam-band-vocal-live.jpg",
+      poster: withBasePath("/images/band/jam-band-vocal-live.jpg"),
       alt: "SHOWREEL TODO: место для будущего видеоролика",
       title: "SHOWREEL — TODO",
       description: "Крупный слот под будущий showreel. Сейчас файл отсутствует и видео не загружается.",

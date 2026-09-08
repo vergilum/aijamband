@@ -1,4 +1,5 @@
 import type { ContactLink, NavigationItem, SeoConfig, SiteConfig } from "@/types/content";
+import { getSiteUrl, withBasePath } from "@/lib/paths";
 
 export const siteConfig: SiteConfig = {
   performerName: "Алексей Иванов",
@@ -57,11 +58,11 @@ export const navigation: NavigationItem[] = [
 ];
 
 export const seo: SeoConfig = {
-  siteUrl: "https://example.com",
+  siteUrl: getSiteUrl(),
   title: "Алексей Иванов — ведущий и живая музыка на корпоратив в Альметьевске",
   description:
     "Ведущий мероприятий Алексей Иванов и кавер-группа Джем-Бэнд для новогодних корпоративов в Альметьевске и Татарстане. Русский, татарский и английский репертуар.",
-  ogImage: "/images/host/alexey-hero-stage-wide.jpg",
+  ogImage: withBasePath("/images/band/hero-fon.png"),
   keywords: [
     "ведущий на корпоратив Альметьевск",
     "ведущий на Новый год Татарстан",
