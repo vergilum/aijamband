@@ -7,7 +7,7 @@ export const landingContent: LandingContent = {
     bullets: ["Альметьевск", "Татарстан", "Живая программа"],
     primaryCtaLabel: "Обсудить мероприятие",
     secondaryCtaLabel: "Проверить дату",
-    mediaId: "alexey-hero-stage-wide",
+    mediaId: "jam-band-hero-fon",
   },
   positioning: [
     "Алексей работает как ведущий мероприятий и как музыкант, поэтому программа может быть собрана вокруг живого контакта с залом и музыкальной части.",
@@ -74,6 +74,19 @@ export const landingContent: LandingContent = {
     },
   ],
   media: [
+    {
+      id: "jam-band-hero-fon",
+      type: "image",
+      src: "/images/band/hero-fon.png",
+      poster: null,
+      alt: "Джем-Бэнд на сцене с ведущим, вокалисткой и барабанщиком",
+      title: "Джем-Бэнд на сцене",
+      description: "Сценический кадр группы для главного первого экрана.",
+      category: "band",
+      featured: true,
+      sortOrder: 1,
+      placeholder: false,
+    },
     {
       id: "alexey-hero-stage-wide",
       type: "image",
