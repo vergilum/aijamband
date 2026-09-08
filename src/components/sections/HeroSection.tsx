@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { getMediaById } from "@/lib/content";
 import { landingContent } from "@/content/landing";
+import { withBasePath } from "@/lib/paths";
 
 export function HeroSection() {
   const { hero } = landingContent;
   const media = getMediaById(hero.mediaId);
+  const mobileHeroSrc = withBasePath("/images/band/hero%20fon%20mobile.png");
   const bandTitle = "ДЖЕМ-БЭНД";
   const bandTitleCharacters = Array.from(bandTitle);
 
@@ -12,7 +14,10 @@ export function HeroSection() {
     <section id="top" className="hero" aria-labelledby="hero-title">
       {media?.src ? (
         <div className="hero-background-media" data-animate-hero="background" aria-hidden="true">
-          <Image src={media.src} alt="" fill priority sizes="100vw" />
+          <picture>
+            <source media="(max-width: 560px)" srcSet={mobileHeroSrc} />
+            <Image src={media.src} alt="" fill priority sizes="100vw" />
+          </picture>
         </div>
       ) : null}
       <div className="hero-copy">
