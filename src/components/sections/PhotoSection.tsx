@@ -15,7 +15,7 @@ export function PhotoSection() {
     <Section id="photos" title="Фотографии" variant="muted">
       <div className="photo-rhythm">
         {photos.map((photo) => (
-          <MediaFrame key={photo.id} media={photo} ratio={photo.category === "host" ? "portrait" : "wide"} />
+          <MediaFrame key={photo.id} media={photo} ratio={photo.category === "host" ? "portrait" : "wide"} animate />
         ))}
       </div>
     </Section>

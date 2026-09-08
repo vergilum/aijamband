@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { AnimationController } from "@/components/animations/AnimationController";
 import { BandSection } from "@/components/sections/BandSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -15,6 +16,7 @@ import { VideoSection } from "@/components/sections/VideoSection";
 export default function Home() {
   return (
     <>
+      <AnimationController />
       <Header />
       <main>
         <HeroSection />

@@ -265,6 +265,10 @@ img {
   letter-spacing: -0.07em;
 }
 
+.hero-title-word {
+  display: inline-block;
+}
+
 .section-kicker {
   margin-bottom: var(--space-2);
   color: rgba(255, 250, 242, 0.78);
@@ -485,26 +489,67 @@ img {
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   min-height: 50px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   border-radius: 999px;
   padding: 0.85rem 1.25rem;
   font-weight: 850;
   line-height: 1.1;
   text-decoration: none;
+  transform: translateY(0);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 24%, rgba(255, 255, 255, 0.34) 45%, transparent 66%);
+  transform: translateX(-120%);
+  transition: transform 520ms ease;
+  pointer-events: none;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.button:hover::after {
+  transform: translateX(120%);
+}
+
+.button:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .button-primary {
   background: var(--color-jam);
   color: white;
+  box-shadow: 0 0.9rem 1.9rem rgba(123, 23, 52, 0.18);
+}
+
+.button-primary:hover {
+  box-shadow: 0 1.15rem 2.2rem rgba(123, 23, 52, 0.28);
 }
 
 .button-secondary {
   border: 1px solid rgba(35, 24, 25, 0.16);
   background: rgba(255, 253, 249, 0.76);
   color: var(--color-text);
+}
+
+.button-secondary:hover {
+  border-color: rgba(123, 23, 52, 0.3);
+  box-shadow: 0 0.9rem 1.8rem rgba(35, 24, 25, 0.08);
 }
 
 .media-frame {
@@ -518,6 +563,24 @@ img {
   background:
     linear-gradient(135deg, rgba(123, 23, 52, 0.28), rgba(15, 95, 75, 0.16)),
     var(--color-stage-soft);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.media-frame img {
+  transition: transform 520ms ease;
+}
+
+.media-frame:hover {
+  border-color: rgba(123, 23, 52, 0.26);
+  box-shadow: 0 1.4rem 2.8rem rgba(35, 24, 25, 0.13);
+  transform: translateY(-4px);
+}
+
+.media-frame:hover img {
+  transform: scale(1.035);
 }
 
 .media-frame::after {
@@ -671,8 +734,10 @@ img {
     radial-gradient(circle at 50% 18%, rgba(216, 180, 106, 0.34), transparent 8rem),
     linear-gradient(165deg, rgba(123, 23, 52, 0.86), rgba(35, 24, 25, 0.96) 58%, rgba(95, 16, 41, 0.92));
   color: white;
-  transform: translateY(1.4rem) scale(0.985);
-  opacity: 0;
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
 }
 
 .vertical-video-slot:nth-child(2) {
@@ -683,9 +748,10 @@ img {
   margin-top: clamp(0.25rem, 2vw, 1.4rem);
 }
 
-.video-motion-root.is-visible .vertical-video-slot {
-  animation: video-card-enter 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--stagger-index) * 90ms);
+.vertical-video-slot:hover {
+  border-color: rgba(255, 250, 242, 0.36);
+  box-shadow: 0 1.4rem 2.8rem rgba(95, 16, 41, 0.2);
+  transform: translateY(-4px);
 }
 
 .vertical-video-slot .play-button {
@@ -752,6 +818,17 @@ img {
   border: 1px solid rgba(35, 24, 25, 0.12);
   background: rgba(255, 253, 249, 0.82);
   padding: clamp(1.25rem, 3vw, 2rem);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease,
+    background-color 260ms ease;
+}
+
+.package-card:hover {
+  border-color: rgba(123, 23, 52, 0.28);
+  box-shadow: 0 1.35rem 2.8rem rgba(35, 24, 25, 0.1);
+  transform: translateY(-5px);
 }
 
 .package-card.featured {
@@ -797,6 +874,14 @@ img {
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   padding: var(--space-4) 0;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease;
+}
+
+.date-row:hover {
+  border-color: rgba(216, 180, 106, 0.34);
+  transform: translateX(0.35rem);
 }
 
 .date-row h3 {
@@ -847,12 +932,25 @@ details {
   border-top: 0;
   border-bottom: 1px solid rgba(35, 24, 25, 0.14);
   padding: var(--space-4) 0;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
+details:hover {
+  border-color: rgba(123, 23, 52, 0.28);
+  transform: translateX(0.25rem);
 }
 
 summary {
   cursor: pointer;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 800;
+  transition: color 220ms ease;
+}
+
+summary:hover {
+  color: var(--color-jam);
 }
 
 details p {
@@ -923,84 +1021,21 @@ details p {
   margin: 0;
 }
 
-@keyframes score-enter {
-  from {
-    transform: translateX(-12vw) rotate(-8deg) scaleX(0.2);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0) rotate(-8deg) scaleX(1);
-    opacity: 0.88;
-  }
-}
-
-@keyframes hero-copy-enter {
-  from {
-    transform: translateY(1rem);
-    clip-path: inset(0 0 100% 0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-  }
-}
-
-@keyframes hero-image-reveal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes hero-image-settle {
-  from {
-    transform: scale(1.065);
-  }
-  to {
-    transform: scale(1.02);
-  }
-}
-
-@keyframes video-card-enter {
-  from {
-    transform: translateY(1.4rem) scale(0.985);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-copy h1,
-  .hero-copy > p {
-    animation: hero-copy-enter 640ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
-
-  .hero-copy > p {
-    animation-delay: 90ms;
-  }
-
-  .hero-background-media {
-    animation: hero-image-reveal 760ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
-  }
-
-  .hero-background-media img {
-    animation: hero-image-settle 1300ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
+  .button,
+  .button::after,
+  .media-frame,
+  .media-frame img,
+  .package-card,
+  .date-row,
+  details,
+  summary,
   .hero-copy h1,
   .hero-copy > p,
   .hero-background-media,
   .hero-background-media img,
   .vertical-video-slot {
+    transition: none !important;
     transform: none !important;
     clip-path: none !important;
     opacity: 1 !important;

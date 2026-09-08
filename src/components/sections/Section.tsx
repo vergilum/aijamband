@@ -10,8 +10,8 @@ interface SectionProps {
 
 export function Section({ id, title, description, children, variant = "default" }: SectionProps) {
   return (
-    <section id={id} className={`section section-${variant}`}>
-      <div className="section-heading">
+    <section id={id} className={`section section-${variant}`} data-animate-section>
+      <div className="section-heading" data-animate-heading>
         <h2>{title}</h2>
         {description ? <p>{description}</p> : null}
       </div>

@@ -10,8 +10,8 @@ export function BandSection() {
   return (
     <Section id="band" title={band.title} variant="muted">
       <div className="band-stage">
-        {media ? <MediaFrame media={media} /> : null}
-        <div className="content-stack">
+        {media ? <MediaFrame media={media} animate /> : null}
+        <div className="content-stack" data-animate-item>
           <p className="section-kicker">Вторая половина программы</p>
           {band.description.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

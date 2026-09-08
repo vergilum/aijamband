@@ -5,12 +5,15 @@ interface MediaFrameProps {
   media: MediaItem;
   priority?: boolean;
   ratio?: "wide" | "portrait";
+  animate?: boolean;
 }
 
-export function MediaFrame({ media, priority = false, ratio = "wide" }: MediaFrameProps) {
+export function MediaFrame({ media, priority = false, ratio = "wide", animate = false }: MediaFrameProps) {
+  const animationProps = animate ? { "data-animate-item": "" } : undefined;
+
   if (media.type === "video") {
     return (
-      <figure className={`media-frame media-${ratio}`}>
+      <figure className={`media-frame media-${ratio}`} {...animationProps}>
         {media.poster ? <Image src={media.poster} alt={media.alt} fill sizes="(max-width: 768px) 100vw, 900px" /> : null}
         <div className="video-placeholder" aria-label={media.title}>
           <span className="play-button" aria-hidden="true" />
@@ -24,14 +27,14 @@ export function MediaFrame({ media, priority = false, ratio = "wide" }: MediaFra
 
   if (!media.src) {
     return (
-      <figure className={`media-frame media-${ratio} empty-media`}>
+      <figure className={`media-frame media-${ratio} empty-media`} {...animationProps}>
         <figcaption>{media.title}</figcaption>
       </figure>
     );
   }
 
   return (
-    <figure className={`media-frame media-${ratio}`}>
+    <figure className={`media-frame media-${ratio}`} {...animationProps}>
       <Image src={media.src} alt={media.alt} fill priority={priority} sizes="(max-width: 768px) 100vw, 900px" />
       <figcaption>{media.placeholder ? "Placeholder media" : media.title}</figcaption>
     </figure>

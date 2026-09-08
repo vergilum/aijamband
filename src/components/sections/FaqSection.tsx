@@ -6,7 +6,7 @@ export function FaqSection() {
     <Section id="faq" title="FAQ" variant="muted">
       <div className="faq-list">
         {landingContent.faq.map((item) => (
-          <details key={item.id}>
+          <details key={item.id} data-animate-item>
             <summary>{item.question}</summary>
             <p>{item.answer}</p>
           </details>

@@ -14,7 +14,7 @@ export function AvailableDatesSection() {
       <div className="dates-panel">
         <div className="dates-list">
           {landingContent.availableDates.map((item) => (
-            <article key={item.date} className={`date-row date-${item.status}`}>
+            <article key={item.date} className={`date-row date-${item.status}`} data-animate-item>
               <div>
                 <h3>{item.date}</h3>
                 {item.placeholder ? <p>{item.note}</p> : null}
@@ -23,7 +23,7 @@ export function AvailableDatesSection() {
             </article>
           ))}
         </div>
-        <a className="button button-primary" href="#contacts">
+        <a className="button button-primary" href="#contacts" data-animate-item>
           Уточнить дату
         </a>
       </div>

@@ -4,10 +4,10 @@ import { Section } from "./Section";
 export function PackagesSection() {
   return (
     <Section id="packages" title="Форматы программы" variant="muted">
-      <p className="packages-intro">Два рабочих формата без формы заявки: стоимость и состав редактируются в контентной модели.</p>
+      <p className="packages-intro" data-animate-item>Два рабочих формата без формы заявки: стоимость и состав редактируются в контентной модели.</p>
       <div className="packages-grid">
         {landingContent.servicePackages.map((servicePackage) => (
-          <article key={servicePackage.id} className={servicePackage.featured ? "package-card featured" : "package-card"}>
+          <article key={servicePackage.id} className={servicePackage.featured ? "package-card featured" : "package-card"} data-animate-item>
             {servicePackage.featured ? <p className="section-kicker">Основной формат</p> : null}
             <h3>{servicePackage.title}</h3>
             <p>{servicePackage.shortDescription}</p>

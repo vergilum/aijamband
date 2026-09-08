@@ -8,7 +8,7 @@ export function ContactSection() {
 
   return (
     <Section id="contacts" title="Связаться напрямую" description="Кнопки являются обычными ссылками во внешние каналы. Сайт ничего не отправляет на сервер.">
-      <div className="contact-panel">
+      <div className="contact-panel" data-animate-item>
         <div className="score-line" aria-hidden="true" />
         <p>Чтобы обсудить дату, формат и состав программы, используйте один из доступных каналов связи.</p>
         {contacts.length > 0 ? (

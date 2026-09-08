@@ -10,8 +10,8 @@ export function HostSection() {
   return (
     <Section id="host" title={host.title}>
       <div className="split-grid host-layout">
-        {media ? <MediaFrame media={media} ratio="portrait" /> : null}
-        <div className="content-stack">
+        {media ? <MediaFrame media={media} ratio="portrait" animate /> : null}
+        <div className="content-stack" data-animate-item>
           {host.description.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

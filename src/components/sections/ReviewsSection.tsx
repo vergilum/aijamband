@@ -10,7 +10,7 @@ export function ReviewsSection() {
     <Section title="Отзывы" description="Реальные отзывы будут добавлены только после подтверждения источников.">
       <div className="reviews-grid">
         {landingContent.reviews.map((review) => (
-          <blockquote key={review.id}>
+          <blockquote key={review.id} data-animate-item>
             <p>{review.text}</p>
             <cite>{review.author}</cite>
           </blockquote>
