@@ -5,7 +5,8 @@ import { landingContent } from "@/content/landing";
 export function HeroSection() {
   const { hero } = landingContent;
   const media = getMediaById(hero.mediaId);
-  const titleWords = hero.title.split(" ");
+  const bandTitle = "ДЖЕМ-БЭНД";
+  const bandTitleCharacters = Array.from(bandTitle);
 
   return (
     <section id="top" className="hero" aria-labelledby="hero-title">
@@ -16,12 +17,15 @@ export function HeroSection() {
       ) : null}
       <div className="hero-copy">
         <p className="section-kicker" data-animate-hero="kicker">Альметьевск · Татарстан</p>
-        <h1 id="hero-title" data-animate-hero="title">
-          {titleWords.map((word, index) => (
-            <span key={`${word}-${index}`} className="hero-title-word" data-animate-hero="title-word">
-              {word}{index < titleWords.length - 1 ? " " : ""}
-            </span>
-          ))}
+        <h1 id="hero-title" className="hero-title" data-animate-hero="title" aria-label={hero.title}>
+          <span className="hero-title-host" data-animate-hero="host" aria-hidden="true">Алексей Иванов</span>
+          <span className="hero-title-band" aria-label={bandTitle}>
+            {bandTitleCharacters.map((character, index) => (
+              <span key={`${character}-${index}`} className="hero-title-character" data-animate-hero="band-character" aria-hidden="true">
+                {character}
+              </span>
+            ))}
+          </span>
         </h1>
         <p data-animate-hero="lead">{hero.lead}</p>
       </div>

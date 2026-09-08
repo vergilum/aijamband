@@ -19,16 +19,27 @@ export function AnimationController() {
 
     const context = gsap.context(() => {
       gsap.set("[data-animate-hero='background']", { scale: 1.06, autoAlpha: 0.72 });
-      gsap.set("[data-animate-hero='kicker'], [data-animate-hero='title-word'], [data-animate-hero='lead']", {
+      gsap.set("[data-animate-hero='kicker'], [data-animate-hero='host'], [data-animate-hero='lead']", {
         y: 28,
         autoAlpha: 0,
+      });
+      gsap.set("[data-animate-hero='band-character']", {
+        y: 42,
+        rotateX: -64,
+        autoAlpha: 0,
+        transformOrigin: "50% 70%",
       });
 
       gsap
         .timeline({ defaults: { ease: "power3.out" } })
         .to("[data-animate-hero='background']", { scale: 1.02, autoAlpha: 1, duration: 1.35 })
         .to("[data-animate-hero='kicker']", { y: 0, autoAlpha: 1, duration: 0.58 }, "-=0.82")
-        .to("[data-animate-hero='title-word']", { y: 0, autoAlpha: 1, duration: 0.72, stagger: 0.075 }, "-=0.34")
+        .to("[data-animate-hero='host']", { y: 0, autoAlpha: 1, duration: 0.58 }, "-=0.32")
+        .to(
+          "[data-animate-hero='band-character']",
+          { y: 0, rotateX: 0, autoAlpha: 1, duration: 0.68, stagger: 0.045 },
+          "-=0.22",
+        )
         .to("[data-animate-hero='lead']", { y: 0, autoAlpha: 1, duration: 0.62 }, "-=0.28");
 
       gsap.utils.toArray<HTMLElement>("[data-animate-section]").forEach((section) => {
