@@ -1,0 +1,32 @@
+import { landingContent } from "@/content/landing";
+import type { AvailableDateStatus } from "@/types/content";
+import { Section } from "./Section";
+
+const statusLabels: Record<AvailableDateStatus, string> = {
+  available: "свободно",
+  booked: "занято",
+  limited: "ограниченно",
+};
+
+export function AvailableDatesSection() {
+  return (
+    <Section id="dates" title="Свободные даты" description="Информационный блок по декабрю для новогодних корпоративов. Это не календарь бронирования и не форма заявки.">
+      <div className="dates-panel">
+        <div className="dates-list">
+          {landingContent.availableDates.map((item) => (
+            <article key={item.date} className={`date-row date-${item.status}`}>
+              <div>
+                <h3>{item.date}</h3>
+                {item.placeholder ? <p>{item.note}</p> : null}
+              </div>
+              <span>{statusLabels[item.status]}</span>
+            </article>
+          ))}
+        </div>
+        <a className="button button-primary" href="#contacts">
+          Уточнить дату
+        </a>
+      </div>
+    </Section>
+  );
+}
