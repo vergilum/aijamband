@@ -1,36 +1,41 @@
-import { landingContent } from "@/content/landing";
-import { MediaFrame } from "./MediaFrame";
+import { withBasePath } from "@/lib/paths";
 import { Section } from "./Section";
+import { VideoCarousel } from "./VideoCarousel";
 
-const verticalVideoSlots = [
-  "Ведущий в работе — TODO",
-  "Джем-Бэнд live — TODO",
-  "Интерактив с группой — TODO",
+const videoGroups = [
+  {
+    title: "Ведущий в работе",
+    description: "Фрагменты работы ведущего на мероприятиях. Листайте ролики стрелками или свайпом.",
+    videos: ["Vefushi1.mp4", "Vefushi2.mp4", "Vefushi3.mp4", "Vefushi4.mp4"].map((fileName, index) => ({
+      src: withBasePath(`/videos/host/${fileName}`),
+      title: `Ведущий в работе ${index + 1}`,
+    })),
+  },
+  {
+    title: "Джем-Бэнд live",
+    description: "Живые выступления группы. Порядок роликов соответствует номерам в названиях файлов.",
+    videos: ["band1.mp4", "band2.mp4", "band3.mp4", "band4.mp4", "band5.mp4", "band6.mp4"].map((fileName, index) => ({
+      src: withBasePath(`/videos/band/${fileName}`),
+      title: `Джем-Бэнд live ${index + 1}`,
+    })),
+  },
+  {
+    title: "Акустический вариант",
+    description: "Более камерный акустический формат для площадок, где нужен спокойный музыкальный блок.",
+    videos: ["Acoustic1.mp4", "Acoustic2.mp4"].map((fileName, index) => ({
+      src: withBasePath(`/videos/acoustic/${fileName}`),
+      title: `Акустический вариант ${index + 1}`,
+    })),
+  },
 ];
 
 export function VideoSection() {
-  const showreel = landingContent.media.find((item) => item.category === "showreel");
-
   return (
-    <Section id="media" title="Видео" description="Блок подготовлен под будущий showreel и вертикальные ролики с мероприятий. Сейчас видео не загружаются.">
+    <Section id="media" title="Видео" description="Фрагменты работы ведущего, живой группы и акустического формата. Видео запускаются только после нажатия play.">
       <div className="video-motion-root">
-        {showreel ? (
-        <article className="showreel-block" data-animate-item>
-          <MediaFrame media={showreel} />
-          <div>
-            <p className="section-kicker">SHOWREEL — TODO</p>
-            <h3>Крупное место под главный ролик</h3>
-            <p>{showreel.description}</p>
-          </div>
-        </article>
-        ) : null}
-        <div className="vertical-video-rail" aria-label="Будущие вертикальные видео">
-          {verticalVideoSlots.map((slot) => (
-            <article key={slot} className="vertical-video-slot reveal-video" data-animate-item>
-              <span className="play-button" aria-hidden="true" />
-              <h3>{slot}</h3>
-              <p>Вертикальный слот 9:16. Настоящее видео будет добавлено позже через content configuration.</p>
-            </article>
+        <div className="video-carousel-grid" aria-label="Видео с мероприятий">
+          {videoGroups.map((group) => (
+            <VideoCarousel key={group.title} title={group.title} description={group.description} videos={group.videos} />
           ))}
         </div>
       </div>
