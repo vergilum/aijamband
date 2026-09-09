@@ -1318,7 +1318,17 @@ details p {
   }
 
   .video-carousel-side {
-    display: none;
+    display: grid;
+    bottom: 4.15rem;
+    width: 18%;
+    min-width: 3.25rem;
+  }
+
+  .video-carousel-side span {
+    width: 2.15rem;
+    height: 2.15rem;
+    background: rgba(35, 24, 25, 0.42);
+    font-size: 1.75rem;
   }
 
   .video-carousel-count {

@@ -16,6 +16,7 @@ interface VideoCarouselProps {
 export function VideoCarousel({ title, description, videos }: VideoCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const total = videos.length;
@@ -28,17 +29,20 @@ export function VideoCarousel({ title, description, videos }: VideoCarouselProps
 
   function handleTouchStart(event: React.TouchEvent<HTMLElement>) {
     touchStartX.current = event.touches[0]?.clientX ?? null;
+    touchStartY.current = event.touches[0]?.clientY ?? null;
   }
 
   function handleTouchEnd(event: React.TouchEvent<HTMLElement>) {
-    if (touchStartX.current === null) {
+    if (touchStartX.current === null || touchStartY.current === null) {
       return;
     }
 
     const deltaX = event.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = event.changedTouches[0].clientY - touchStartY.current;
     touchStartX.current = null;
+    touchStartY.current = null;
 
-    if (Math.abs(deltaX) < 48) {
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaY) > Math.abs(deltaX)) {
       return;
     }
 
