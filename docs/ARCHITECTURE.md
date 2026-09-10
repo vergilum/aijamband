@@ -57,7 +57,7 @@
 
 SEO реализовано через Next.js metadata API в `src/app/layout.tsx`, а также `src/app/robots.ts` и `src/app/sitemap.ts`.
 
-Поле `seo.siteUrl` сейчас содержит placeholder `https://example.com`. Перед публикацией его нужно заменить на реальный домен.
+Поле `seo.siteUrl` использует production-домен `https://aijamband.ru` через `src/lib/paths.ts` и переменную `NEXT_PUBLIC_SITE_URL` в GitHub Pages workflow.
 
 ## Что не добавлено намеренно
 

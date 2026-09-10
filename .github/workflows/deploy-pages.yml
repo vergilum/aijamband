@@ -18,8 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /aijamband
-      NEXT_PUBLIC_SITE_URL: https://vergilum.github.io/aijamband
+      NEXT_PUBLIC_SITE_URL: https://aijamband.ru
     steps:
       - name: Checkout
         uses: actions/checkout@v4
