@@ -59,6 +59,7 @@ export interface ServicePackage {
   title: string;
   shortDescription: string;
   features: string[];
+  note?: string;
   price: number;
   pricePrefix: string;
   priceSuffix: string;

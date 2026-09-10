@@ -5,7 +5,7 @@ import { VideoCarousel } from "./VideoCarousel";
 const videoGroups = [
   {
     title: "Ведущий в работе",
-    description: "Фрагменты работы ведущего на мероприятиях. Листайте ролики стрелками или свайпом.",
+    description: "Фрагменты работы ведущего на мероприятиях.",
     videos: ["Vefushi1.mp4", "Vefushi2.mp4", "Vefushi3.mp4", "Vefushi4.mp4"].map((fileName, index) => ({
       src: withBasePath(`/videos/host/${fileName}`),
       title: `Ведущий в работе ${index + 1}`,
@@ -13,7 +13,7 @@ const videoGroups = [
   },
   {
     title: "Джем-Бэнд live",
-    description: "Живые выступления группы. Порядок роликов соответствует номерам в названиях файлов.",
+    description: "Живые выступления группы.",
     videos: ["band1.mp4", "band2.mp4", "band3.mp4", "band4.mp4", "band5.mp4", "band6.mp4"].map((fileName, index) => ({
       src: withBasePath(`/videos/band/${fileName}`),
       title: `Джем-Бэнд live ${index + 1}`,
@@ -31,7 +31,7 @@ const videoGroups = [
 
 export function VideoSection() {
   return (
-    <Section id="media" title="Видео" description="Фрагменты работы ведущего, живой группы и акустического формата. Видео запускаются только после нажатия play.">
+    <Section id="media" title="Видео" description="Фрагменты работы ведущего, живой группы и акустического формата">
       <div className="video-motion-root">
         <div className="video-carousel-grid" aria-label="Видео с мероприятий">
           {videoGroups.map((group) => (
