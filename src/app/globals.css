@@ -1405,19 +1405,37 @@ details p {
 
   .hero-copy {
     padding-left: 0;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .hero-copy > *,
+  .hero-title-host,
+  .hero-title-band {
+    justify-self: center;
+    text-align: center;
   }
 
   .hero h1 {
+    width: 100%;
     max-width: min(100%, 18rem);
+    justify-items: center;
   }
 
   .hero-title-host {
+    width: 100%;
     font-size: clamp(1.65rem, 8vw, 2.6rem);
   }
 
   .hero-title-band {
+    width: 100%;
     gap: 0.035em;
     font-size: clamp(2.55rem, 11.5vw, 3.25rem);
+    transform: translateX(-0.08em);
+  }
+
+  .hero-copy > p:not(.section-kicker) {
+    width: 100%;
   }
 
   .button {
