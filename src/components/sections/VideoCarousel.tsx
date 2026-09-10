@@ -52,7 +52,6 @@ export function VideoCarousel({ title, description, videos }: VideoCarouselProps
   return (
     <article className="video-carousel-card reveal-video" data-animate-item onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <div className="video-carousel-copy">
-        <p className="section-kicker">Видео</p>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>

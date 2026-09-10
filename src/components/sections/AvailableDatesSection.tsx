@@ -3,9 +3,9 @@ import type { AvailableDateStatus } from "@/types/content";
 import { Section } from "./Section";
 
 const statusLabels: Record<AvailableDateStatus, string> = {
-  available: "свободно",
-  booked: "занято",
-  limited: "ограниченно",
+  available: "Свободно",
+  booked: "Занято",
+  limited: "Ограничено",
 };
 
 export function AvailableDatesSection() {
@@ -17,7 +17,7 @@ export function AvailableDatesSection() {
             <article key={item.date} className={`date-row date-${item.status}`} data-animate-item>
               <div>
                 <h3>{item.date}</h3>
-                {item.placeholder ? <p>{item.note}</p> : null}
+                <p>{item.note}</p>
               </div>
               <span>{statusLabels[item.status]}</span>
             </article>

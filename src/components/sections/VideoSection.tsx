@@ -31,7 +31,7 @@ const videoGroups = [
 
 export function VideoSection() {
   return (
-    <Section id="media" title="Видео" description="Фрагменты работы ведущего, живой группы и акустического формата">
+    <Section id="media" title="Видео">
       <div className="video-motion-root">
         <div className="video-carousel-grid" aria-label="Видео с мероприятий">
           {videoGroups.map((group) => (

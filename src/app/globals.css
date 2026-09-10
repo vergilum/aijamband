@@ -1122,7 +1122,12 @@ img {
 
 .dates-list {
   display: grid;
+  max-height: min(62svh, 560px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-right: 0.35rem;
+  scrollbar-color: rgba(255, 250, 242, 0.42) rgba(255, 255, 255, 0.08);
 }
 
 .date-row {
@@ -1248,6 +1253,48 @@ details p {
   color: var(--color-jam);
 }
 
+.contact-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.contact-link,
+.social-row a {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.6rem 0.95rem 0.6rem 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 800;
+}
+
+.contact-link img,
+.social-row img {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  object-fit: contain;
+}
+
+.contact-phone {
+  margin: var(--space-4) 0 0;
+  font-weight: 800;
+}
+
+.contact-phone a {
+  color: #fffaf2;
+  font-size: clamp(1.35rem, 4vw, 2.35rem);
+  letter-spacing: -0.035em;
+}
+
 .social-row {
   position: relative;
   z-index: 1;
@@ -1258,8 +1305,7 @@ details p {
 }
 
 .social-row a {
-  color: rgba(255, 255, 255, 0.82);
-  font-weight: 800;
+  text-decoration: none;
 }
 
 .small-note {
@@ -1452,6 +1498,16 @@ details p {
 
   .contact-panel .cta-row {
     display: grid;
+  }
+
+  .contact-links,
+  .social-row {
+    display: grid;
+  }
+
+  .contact-link,
+  .social-row a {
+    width: 100%;
   }
 
   .vertical-video-rail {

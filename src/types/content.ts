@@ -6,6 +6,7 @@ export interface ContactLink {
   href: string | null;
   visibleLabel: string;
   external: boolean;
+  iconSrc?: string;
 }
 
 export interface NavigationItem {

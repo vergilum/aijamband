@@ -14,28 +14,31 @@ export const contacts: ContactLink[] = [
   {
     id: "telegram",
     label: "Написать в Telegram",
-    href: null,
+    href: "https://t.me/alx_floyd",
     visibleLabel: "Telegram",
     external: true,
+    iconSrc: "/icons/social/Telegram.png",
   },
   {
     id: "whatsapp",
     label: "Написать в WhatsApp",
-    href: null,
+    href: "https://wa.me/89178796094",
     visibleLabel: "WhatsApp",
     external: true,
+    iconSrc: "/icons/social/WhatsApp.webp",
   },
   {
     id: "max",
     label: "Написать в MAX",
-    href: null,
+    href: "https://max.ru/u/f9LHodD0cOKuvSrjhLB5rXKals4pdaOfETqMO4moTepG7c3tDl37f7QcO4g",
     visibleLabel: "MAX",
     external: true,
+    iconSrc: "/icons/social/MAX.webp",
   },
   {
     id: "phone",
     label: "Позвонить Алексею",
-    href: null,
+    href: "tel:+79178796004",
     visibleLabel: "Телефон",
     external: false,
   },
@@ -45,6 +48,7 @@ export const contacts: ContactLink[] = [
     href: siteConfig.instagram,
     visibleLabel: "Instagram",
     external: true,
+    iconSrc: "/icons/social/Instagram.png",
   },
 ];
 
